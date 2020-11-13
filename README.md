@@ -15,7 +15,7 @@
 
 <table style="width:100% vertical-align:middle">
   <tr>
-    <td><img alt="Namaste" width="200px" src="https://lh3.googleusercontent.com/pw/ACtC-3f1NgaonZbwj4vqHKSVBBWMiEKScLBy1nLO1ODgR7S1KFl8R0eo1AGogpIHGwFQm-zOsLOebSERCXwJIZZJxVdfBQ6cYHCFGQOgBsvPntqxWbVW5lH0lS9LZ0fTtv-n_txwp3EeMxXb8QOvSjGpL6c7kw=w500-h50-no?authuser=0"/>[twitter]</td>
+    <td><a href="https://twitter.com/gamble4846"><img alt="Namaste" width="200px" src="https://lh3.googleusercontent.com/pw/ACtC-3f1NgaonZbwj4vqHKSVBBWMiEKScLBy1nLO1ODgR7S1KFl8R0eo1AGogpIHGwFQm-zOsLOebSERCXwJIZZJxVdfBQ6cYHCFGQOgBsvPntqxWbVW5lH0lS9LZ0fTtv-n_txwp3EeMxXb8QOvSjGpL6c7kw=w500-h50-no?authuser=0"/></a></td>
 </table>
 
 ### What am I doing?
