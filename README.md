@@ -11,9 +11,8 @@
     </tr>
   </table>
 </div>
-<a href="https://twitter.com/gamble4846?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @gamble4846</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-[![Twitter Follow](https://img.shields.io/twitter/follow/codeSTACKr?color=1DA1F2&logo=twitter&style=for-the-badge)](https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fgithub.com%2FcodeSTACKr&screen_name=gamble4846)
+<img alt="Namaste" width="300px" src="https://lh3.googleusercontent.com/pw/ACtC-3d0rIex-y1fbaRKdZgke8Opt0MX64jWtnvgrsnw0PVuxEdanPGelq-ZHxJZMyvUWCGqtApxtOnlqaJKYdAq7GliZmTE_6ZaJooTi39NLdtDvfqjZn4A3_36KAlFqiN5KGfR1rHZG4ujp3iK3G2OCSSZSA=w500-h50-no?authuser=0"/>
 
 ### What am I doing?
 
@@ -23,10 +22,6 @@
     <td><img alt="Google Chrome" width="16px" src="https://lh3.googleusercontent.com/pw/ACtC-3ckVpMok_mXBplw0oWynwgGunQsboqmqzYtsQjbfe-zN9K0RgiZTQZ8y5fD5lkvca0r9msIJHbWmWVsFk1XC--M2oQW_nHzBMHaISz5gBhDYhy_uh3DErDZi-ftZm-3T8h-VfaXIpb40WF6dWY0FYcjTQ=s833-no?authuser=0"/></td>
     <td>Working on Some Browser Extensions</td>
 </table>
-
-### Spotify Playing 🎧
-
-[<img src="https://now-playing-codestackr.vercel.app/api/spotify-playing" alt="codeSTACKr Spotify Playing" width="350" />](https://open.spotify.com/user/q9wte27lognfmt4hp16p0j0zc)
 
 ### Find Me Here:
 
