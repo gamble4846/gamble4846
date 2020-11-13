@@ -1,5 +1,5 @@
 <div style="text-align:center">
-  <table style="width:100%">
+  <table style="width:100%; margin:0; padding:0;">
     <tr>
       <td><img alt="Namaste" width="300px" src="https://lh3.googleusercontent.com/pw/ACtC-3cbywyRqQcC7HIqFpJd5mmWaAEjjP30bacj7WeiSh3v_82hD_udRj8QBe5QRfjJtI6OT4QryjhAeAgfGNZGTrbj2wVxG8XQHsJqD1zdRSkdUQYXyXOV2Dgkybn7QFo8e1-fwSM7WIy3mj8aInNvZarS5Q=w565-h238-no?authuser=0" /></td>
     </tr>
@@ -11,6 +11,7 @@
     </tr>
   </table>
 </div>
+<a href="https://twitter.com/gamble4846?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @gamble4846</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/codeSTACKr?color=1DA1F2&logo=twitter&style=for-the-badge)](https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fgithub.com%2FcodeSTACKr&screen_name=gamble4846)
 
