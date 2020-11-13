@@ -5,8 +5,14 @@
 
 ### What am I doing?
 
-- <img alt="Google Chrome" width="16px" src="https://lh3.googleusercontent.com/pw/ACtC-3ckVpMok_mXBplw0oWynwgGunQsboqmqzYtsQjbfe-zN9K0RgiZTQZ8y5fD5lkvca0r9msIJHbWmWVsFk1XC--M2oQW_nHzBMHaISz5gBhDYhy_uh3DErDZi-ftZm-3T8h-VfaXIpb40WF6dWY0FYcjTQ=s833-no?authuser=0" /> Working on Some Browser Extensions
+-  Working on Some Browser Extensions
 - ⚡ Fun fact: I love to draw and play guitar / drums
+
+<table style="width:100%">
+  <tr>
+    <td><img alt="Google Chrome" width="16px" src="https://lh3.googleusercontent.com/pw/ACtC-3ckVpMok_mXBplw0oWynwgGunQsboqmqzYtsQjbfe-zN9K0RgiZTQZ8y5fD5lkvca0r9msIJHbWmWVsFk1XC--M2oQW_nHzBMHaISz5gBhDYhy_uh3DErDZi-ftZm-3T8h-VfaXIpb40WF6dWY0FYcjTQ=s833-no?authuser=0" /></td>
+    <td>Working on Some Browser Extensions</td>
+</table>
 
 ### Spotify Playing 🎧
 
