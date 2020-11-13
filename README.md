@@ -41,8 +41,17 @@
 [<img align="left" alt="codeSTACKr | Instagram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/instagram.svg" />][instagram]
 
 <br>
-
 <hr>
+
+### Completed Projects:
+
+<table style="width:100% vertical-align:middle">
+  <tr>
+    <td><img alt="Google Chrome" width="16px" src="https://lh3.googleusercontent.com/pw/ACtC-3dLlZ7hqmna-NI9AvTWhjTfh3R_o5hDg8DoIUPpAcJ2E0XtbC-XSJMdDq1e-B0ryPG_J62VtADnthvJzRih1g-PbQqnyREETfKnujAM-V-kLln0nthadiNciHCtT14cTuKzGDy1oFz8sl7vqjbmW9X3pA=w256-h320-no?authuser=0"/></td>
+    <td><img alt="Google Chrome" width="16px" src="https://lh3.googleusercontent.com/pw/ACtC-3cwlMa1_rGBmye6-K9hsMhq1JOnSWOmyAhPuOeBDKNQWNQUV1V6Ctb5htgF3SjqxULtWkF7ULurKk6CW-AzR3DCv74TN-BSa-FGaEKfo1KRpTIuJ_Q3Rh1x0uGxHNcs4f-SjhL9Yd4kw6su9tzpyCN6eQ=w402-h566-no?authuser=0"/></td>
+    <td>Nothing to Show :(</td>
+  </tr>
+</table>
 
 [twitter]: https://twitter.com/gamble4846
 [youtube]: https://youtube.com/
