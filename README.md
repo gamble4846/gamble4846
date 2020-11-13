@@ -5,7 +5,7 @@
 
 ### What am I doing?
 
-- [<img alt="Google Chrome" width="26px" src="https://lh3.googleusercontent.com/pw/ACtC-3ckVpMok_mXBplw0oWynwgGunQsboqmqzYtsQjbfe-zN9K0RgiZTQZ8y5fD5lkvca0r9msIJHbWmWVsFk1XC--M2oQW_nHzBMHaISz5gBhDYhy_uh3DErDZi-ftZm-3T8h-VfaXIpb40WF6dWY0FYcjTQ=s833-no?authuser=0" />] Working on Some Browser Extensions
+- [<img alt="Google Chrome" width="20px" src="https://lh3.googleusercontent.com/pw/ACtC-3ckVpMok_mXBplw0oWynwgGunQsboqmqzYtsQjbfe-zN9K0RgiZTQZ8y5fD5lkvca0r9msIJHbWmWVsFk1XC--M2oQW_nHzBMHaISz5gBhDYhy_uh3DErDZi-ftZm-3T8h-VfaXIpb40WF6dWY0FYcjTQ=s833-no?authuser=0" />] Working on Some Browser Extensions
 - ⚡ Fun fact: I love to draw and play guitar / drums
 
 ### Spotify Playing 🎧
