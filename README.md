@@ -1,12 +1,14 @@
 ### Hi there, I'm Jesse - aka [codeSTACKr][website] 👋
+<table style="width:100% vertical-align:middle">
+  <tr>
+    <td><img alt="Namaste" width="16px" src="https://lh3.googleusercontent.com/pw/ACtC-3cbywyRqQcC7HIqFpJd5mmWaAEjjP30bacj7WeiSh3v_82hD_udRj8QBe5QRfjJtI6OT4QryjhAeAgfGNZGTrbj2wVxG8XQHsJqD1zdRSkdUQYXyXOV2Dgkybn7QFo8e1-fwSM7WIy3mj8aInNvZarS5Q=w565-h238-no?authuser=0" />
+  </tr>
+</table>
 
 [![Website](https://img.shields.io/website?label=codeSTACKr.com&style=for-the-badge&url=https%3A%2F%2Fcodestackr.com)](https://codestackr.com)
 [![Twitter Follow](https://img.shields.io/twitter/follow/codeSTACKr?color=1DA1F2&logo=twitter&style=for-the-badge)](https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fgithub.com%2FcodeSTACKr&screen_name=codeSTACKr)
 
 ### What am I doing?
-
--  Working on Some Browser Extensions
-- ⚡ Fun fact: I love to draw and play guitar / drums
 
 <table style="width:100% vertical-align:middle">
   <tr>
