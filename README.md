@@ -53,6 +53,8 @@
   </tr>
 </table>
 
+<hr>
+
 [twitter]: https://twitter.com/gamble4846
 [youtube]: https://youtube.com/
 [instagram]: https://instagram.com/gamble4846
