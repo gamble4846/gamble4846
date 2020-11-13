@@ -12,7 +12,7 @@
   </table>
 </div>
 
-<img alt="Namaste" width="300px" src="https://lh3.googleusercontent.com/pw/ACtC-3d0rIex-y1fbaRKdZgke8Opt0MX64jWtnvgrsnw0PVuxEdanPGelq-ZHxJZMyvUWCGqtApxtOnlqaJKYdAq7GliZmTE_6ZaJooTi39NLdtDvfqjZn4A3_36KAlFqiN5KGfR1rHZG4ujp3iK3G2OCSSZSA=w500-h50-no?authuser=0"/>
+<img alt="Namaste" width="200px" src="https://lh3.googleusercontent.com/pw/ACtC-3f1NgaonZbwj4vqHKSVBBWMiEKScLBy1nLO1ODgR7S1KFl8R0eo1AGogpIHGwFQm-zOsLOebSERCXwJIZZJxVdfBQ6cYHCFGQOgBsvPntqxWbVW5lH0lS9LZ0fTtv-n_txwp3EeMxXb8QOvSjGpL6c7kw=w500-h50-no?authuser=0"/>
 
 ### What am I doing?
 
