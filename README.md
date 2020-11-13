@@ -1,5 +1,5 @@
 <div style="text-align:center">
-  <table style="width:100%; margin:0; padding:0;">
+  <table style="width:100%">
     <tr>
       <td><img alt="Namaste" width="300px" src="https://lh3.googleusercontent.com/pw/ACtC-3cbywyRqQcC7HIqFpJd5mmWaAEjjP30bacj7WeiSh3v_82hD_udRj8QBe5QRfjJtI6OT4QryjhAeAgfGNZGTrbj2wVxG8XQHsJqD1zdRSkdUQYXyXOV2Dgkybn7QFo8e1-fwSM7WIy3mj8aInNvZarS5Q=w565-h238-no?authuser=0" /></td>
     </tr>
@@ -19,7 +19,8 @@
 
 <table style="width:100% vertical-align:middle">
   <tr>
-    <td><img alt="Google Chrome" width="16px" src="https://lh3.googleusercontent.com/pw/ACtC-3ckVpMok_mXBplw0oWynwgGunQsboqmqzYtsQjbfe-zN9K0RgiZTQZ8y5fD5lkvca0r9msIJHbWmWVsFk1XC--M2oQW_nHzBMHaISz5gBhDYhy_uh3DErDZi-ftZm-3T8h-VfaXIpb40WF6dWY0FYcjTQ=s833-no?authuser=0" /></td>
+    <td><img alt="Google Chrome" width="16px" src="https://lh3.googleusercontent.com/pw/ACtC-3dLlZ7hqmna-NI9AvTWhjTfh3R_o5hDg8DoIUPpAcJ2E0XtbC-XSJMdDq1e-B0ryPG_J62VtADnthvJzRih1g-PbQqnyREETfKnujAM-V-kLln0nthadiNciHCtT14cTuKzGDy1oFz8sl7vqjbmW9X3pA=w256-h320-no?authuser=0"/></td>
+    <td><img alt="Google Chrome" width="16px" src="https://lh3.googleusercontent.com/pw/ACtC-3ckVpMok_mXBplw0oWynwgGunQsboqmqzYtsQjbfe-zN9K0RgiZTQZ8y5fD5lkvca0r9msIJHbWmWVsFk1XC--M2oQW_nHzBMHaISz5gBhDYhy_uh3DErDZi-ftZm-3T8h-VfaXIpb40WF6dWY0FYcjTQ=s833-no?authuser=0"/></td>
     <td>Working on Some Browser Extensions</td>
 </table>
 
