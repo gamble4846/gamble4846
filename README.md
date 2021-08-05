@@ -49,7 +49,7 @@
   <tr>
     <td><img alt="Google Chrome" width="16px" src="https://lh3.googleusercontent.com/pw/ACtC-3dLlZ7hqmna-NI9AvTWhjTfh3R_o5hDg8DoIUPpAcJ2E0XtbC-XSJMdDq1e-B0ryPG_J62VtADnthvJzRih1g-PbQqnyREETfKnujAM-V-kLln0nthadiNciHCtT14cTuKzGDy1oFz8sl7vqjbmW9X3pA=w256-h320-no?authuser=0"/></td>
     <td><img alt="Twitch Logo" width="16px" src="https://lh3.googleusercontent.com/pw/AM-JKLVlLfmfdm6g-cx-YxrUR59alhwppoEo2Wy963_nPXwK6Se2BQf9H0EnUm9va5JWuaB0fY5fTWfcEkxsWKyVa3bn0ttaZmGiL6LcSOCEVoUnJc7_QfLDqxEi0As036qW4J6_eq2RL75B_8Ys47T8G0G-=s500-no?authuser=0"/></td>
-    <td>Twitch Clips Downloader</td>
+    <td>[Twitch Clips Downloader](https://github.com/gamble4846/BulkTwitchClipsDownloader)</td>
   </tr>
 </table>
 
