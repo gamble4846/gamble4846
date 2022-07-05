@@ -9,7 +9,7 @@
       <td>I'm Rohan Patel</td>
     </tr>
     <tr>
-      <td>WelcomeToMyProfile</td>
+      <td>Welcome To My Profile</td>
     </tr>
   </table>
 </div>
