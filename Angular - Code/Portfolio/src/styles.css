@@ -1,0 +1,237 @@
+:root {
+  --main-navigation-container-height: 70px;
+  --navigation-padding: 0px 20px;
+  --initials-menu-size: 40px;
+  --navigation-font-color: white;
+  --menu-items-font-size: 13px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Rubik;
+}
+
+@font-face {
+  font-family: LeagueSpartan;
+  src: url(../src/assets/fonts/LeagueSpartan.otf);
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../src/assets/fonts/Montserrat.ttf);
+}
+
+@font-face {
+  font-family: RampageMonoline;
+  src: url(../src/assets/fonts/RampageMonoline.otf);
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url(../src/assets/fonts/Rubik.ttf);
+}
+
+.app-menu-cmp{
+  z-index: 1;
+  position: relative;
+}
+
+.main-body-container{
+  height: calc(100vh - var(--main-navigation-container-height));
+  display: flex;
+}
+
+.current-page-name{
+  position: fixed;
+  background-color: white;
+  height: 30px;
+  right: 0;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px 0px 0px 10px;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.current-page-name:hover{
+  padding-right: 30px;
+}
+
+.main-body-container .black-box-in-body{
+  background-color: black;
+  width: 40%;
+  height: 100%;
+}
+
+.main-body-container .image-container-in-body{
+  width: 60%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.main-body-container .image-container-in-body .image-in-body{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-datas{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.page-data{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.page-data-container{
+  color: white;
+  position: absolute;
+  left: 120px;
+  top: 150px;
+  width: 40vw;
+}
+
+.page-data-container .subheading{
+  font-size: 18px;
+}
+
+.page-data-container .heading{
+  font-size: 40px;
+}
+
+.page-data-container .description{
+  padding-top: 30px;
+  font-size: 10px;
+}
+
+.page-data-container .button-container{
+  padding-top: 30px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: max-content;
+}
+
+.page-data-container .button-container:hover .right-arrow{
+  width: 40px;
+}
+
+.page-data-container .button-container .button-icon{
+  height: 10px;
+  color: white;
+}
+
+
+.main-navigation-container{
+  height: var(--main-navigation-container-height);
+  background-color: black;
+}
+
+.inner-navigation-container{
+  height: 100%;
+  padding: var(--navigation-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--navigation-font-color);
+}
+
+.initials-container{
+  font-family: RampageMonoline;
+  font-size: var(--initials-menu-size);
+}
+
+.horizontal-menu-container{
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  font-size: var(--menu-items-font-size);
+}
+
+.menu-item{
+  cursor: pointer;
+  position: relative;
+}
+
+.menu-item::after{
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  background-color: white;
+  left: 0;
+  right: 0;
+  bottom: -25px;
+  border-radius: 1px;
+  transition: 0.3s ease-out;
+  margin: auto;
+}
+
+.menu-item:hover::after{
+  width: 100%;
+}
+
+.right-arrow{
+  margin-left: 10px;
+  width: 30px;
+  background-color: white;
+  height: 1px;
+  display: block;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+
+.right-arrow::after{
+  content: "";
+  width: 5px;
+  height: 1px;
+  position: absolute;
+  right: 0;
+  top: -2px;
+  background-color: white;
+  transform: rotate(45deg);
+}
+
+.right-arrow::before{
+  content: "";
+  width: 5px;
+  height: 1px;
+  position: absolute;
+  right: 0;
+  bottom: -2px;
+  background-color: white;
+  transform: rotate(-45deg);
+}
+
+.social-container{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  color: white;
+  padding-left: 10px;
+  z-index: 2;
+}
+
+.social-container .socials{
+  display: flex;
+}
+
+.social-container .socials .social{
+  padding: 5px 10px 5px 0px;
+}
+
+.social-container .socials .social a img{
+  height: 20px;
+}

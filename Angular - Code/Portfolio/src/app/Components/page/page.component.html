@@ -1,0 +1,35 @@
+<div class="main-body-container">
+  <div class="black-box-in-body">
+
+  </div>
+  <div class="image-container-in-body">
+      <img src="{{currentMainImage}}" class="image-in-body">
+  </div>
+</div>
+
+<div class="current-page-name">Me</div>
+
+<div class="social-container">
+    <div class="follow-me">
+        FOLLOW ME
+    </div>
+    <div class="socials">
+        <div class="social"><a href="#"><img src="../../../assets/images/githubIcon.png"></a></div>
+        <div class="social"><a href="#"><img src="../../../assets/images/instagramIcon.png"></a></div>
+        <div class="social"><a href="#"><img src="../../../assets/images/linkedinIcon.png"></a></div>
+    </div>
+</div>
+
+<div class="page-datas" (wheel)="onMousewheel($event)">
+  <div class="page-data" *ngFor="let page of pageDatas">
+      <div class="page-data-container">
+          <div class="subheading">{{page.Subheading}}</div>
+          <div class="heading">{{page.Heading}}</div>
+          <div class="description">{{page.Description}}</div>
+          <div class="button-container">
+              <div class="button-name">{{page.ButtonName}}</div>
+              <div class="right-arrow"></div>
+          </div>
+      </div>
+  </div>
+</div>
