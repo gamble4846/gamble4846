@@ -3,33 +3,39 @@
 
   </div>
   <div class="image-container-in-body">
-      <img src="{{currentMainImage}}" class="image-in-body">
+    <img src="{{page.ImageLink}}" class="image-in-body" *ngFor="let page of pageDatas; let i = index" [ngClass]="{'image-show': i == currentSelectedPageIndex}">
   </div>
 </div>
 
-<div class="current-page-name">Me</div>
+<div class="current-page-name">{{currentPageName}}</div>
 
 <div class="social-container">
     <div class="follow-me">
         FOLLOW ME
     </div>
     <div class="socials">
-        <div class="social"><a href="#"><img src="../../../assets/images/githubIcon.png"></a></div>
-        <div class="social"><a href="#"><img src="../../../assets/images/instagramIcon.png"></a></div>
-        <div class="social"><a href="#"><img src="../../../assets/images/linkedinIcon.png"></a></div>
+        <div class="social"><a target="_blank" href="https://github.com/gamble4846"><img src="../../../assets/images/githubIcon.png"></a></div>
+        <div class="social"><a target="_blank" href="https://www.instagram.com/gamble4846/"><img src="../../../assets/images/instagramIcon.png"></a></div>
+        <div class="social"><a target="_blank" href="https://www.linkedin.com/in/rohanpatel4846/"><img src="../../../assets/images/linkedinIcon.png"></a></div>
     </div>
 </div>
 
-<div class="page-datas" (wheel)="onMousewheel($event)">
+<div class="page-datas" (wheel)="onMousewheel($event)" [style.transform]="pageDatasTransform">
   <div class="page-data" *ngFor="let page of pageDatas">
-      <div class="page-data-container">
-          <div class="subheading">{{page.Subheading}}</div>
-          <div class="heading">{{page.Heading}}</div>
-          <div class="description">{{page.Description}}</div>
-          <div class="button-container">
-              <div class="button-name">{{page.ButtonName}}</div>
-              <div class="right-arrow"></div>
-          </div>
+    <div class="page-data-container" *ngIf="page.PageName == 'Me' || page.PageName == 'My Projects' ||  page.PageName == 'Projects I\'ve Worked On' ">
+      <div class="subheading">{{page.Subheading}}</div>
+      <div class="heading">{{page.Heading}}</div>
+      <div class="description">{{page.Description}}</div>
+      <div class="button-container">
+          <div class="button-name">{{page.ButtonName}}</div>
+          <div class="right-arrow"></div>
       </div>
+    </div>
+  </div>
+
+  <div class="page-data">
+    <div class="page-data-container">
+
+    </div>
   </div>
 </div>

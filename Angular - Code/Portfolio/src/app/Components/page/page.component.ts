@@ -11,7 +11,11 @@ export class PageComponent implements OnInit {
   currentWheelPosition:number = 0;
   pageDatas:any;
   currentMainImage:any;
-  scrolPerPage:number = 300;
+  scrolPerPage:number = 500;
+  currentPageName:any;
+  totalPages:number = 0;
+  currentSelectedPageIndex:number = 0;
+  pageDatasTransform:any = "translateY(0vh)";
 
   constructor(public PageDataService:PageDataServiceService) { }
 
@@ -24,10 +28,31 @@ export class PageComponent implements OnInit {
     if(this.currentWheelPosition < 0){
       this.currentWheelPosition = 0;
     }
-    console.log(this.currentWheelPosition);
+    if(this.currentWheelPosition > (this.totalPages + 1) * this.scrolPerPage){
+      this.currentWheelPosition = (this.totalPages + 1) * this.scrolPerPage;
+    }
+    this.updatePage();
   }
 
   updatePage(){
+    for (let index = 0; index < this.pageDatas.length; index++) {
+      const pageData = this.pageDatas[index];
+      let maxScroll = (index + 1) * this.scrolPerPage;
+      let minScroll = ((index + 1) * this.scrolPerPage) - this.scrolPerPage;
+      if(this.currentWheelPosition < maxScroll && this.currentWheelPosition > minScroll){
+        this.currentMainImage = this.pageDatas[index].ImageLink;
+        this.currentPageName = this.pageDatas[index].PageName;
+        this.totalPages = this.pageDatas.length;
+        this.currentSelectedPageIndex = index;
+        this.pageDatasTransform = "translateY(-"+(index) * 100+"vh)"
+      }
+    }
+
+    //contact-me
+    if(this.currentWheelPosition < (this.totalPages + 1) * this.scrolPerPage && this.currentWheelPosition > (((this.totalPages + 1)) * this.scrolPerPage) - this.scrolPerPage){
+      this.pageDatasTransform = "translateY(-"+(this.totalPages) * 100+"vh)";
+      this.currentSelectedPageIndex = (this.totalPages + 1);
+    }
   }
 
   getPageData(){
@@ -36,6 +61,9 @@ export class PageComponent implements OnInit {
         console.log(response);
         this.pageDatas = response.data;
         this.currentMainImage = this.pageDatas[0].ImageLink;
+        this.currentPageName = this.pageDatas[0].PageName;
+        this.totalPages = this.pageDatas.length;
+        this.currentSelectedPageIndex = 0;
       }
       else{
 
