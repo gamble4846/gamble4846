@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { PageDataServiceService } from 'src/app/Services/PageDataService/page-data-service.service';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-page',
@@ -17,10 +18,19 @@ export class PageComponent implements OnInit {
   currentSelectedPageIndex:number = 0;
   pageDatasTransform:any = "translateY(0vh)";
 
-  constructor(public PageDataService:PageDataServiceService) { }
+  //Contect Me
+  contactMeForm!:FormGroup;
+
+
+  constructor(public PageDataService:PageDataServiceService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.getPageData();
+    this.contactMeForm = this.fb.group({
+      email: [null, [Validators.email, Validators.required]],
+      name: [null, [Validators.required]],
+      message: [null, [Validators.required]],
+    });
   }
 
   @HostListener('mousewheel', ['$event']) onMousewheel(event:any) {
@@ -52,6 +62,7 @@ export class PageComponent implements OnInit {
     if(this.currentWheelPosition < (this.totalPages + 1) * this.scrolPerPage && this.currentWheelPosition > (((this.totalPages + 1)) * this.scrolPerPage) - this.scrolPerPage){
       this.pageDatasTransform = "translateY(-"+(this.totalPages) * 100+"vh)";
       this.currentSelectedPageIndex = (this.totalPages + 1);
+      this.currentPageName = "Contact Me";
     }
   }
 
@@ -72,5 +83,18 @@ export class PageComponent implements OnInit {
     (error) => {
       console.log(error);
     });
+  }
+
+  submitContactMeForm(){
+    if (this.contactMeForm.valid) {
+      console.log('submit', this.contactMeForm.value);
+    } else {
+      Object.values(this.contactMeForm.controls).forEach(control => {
+        if (control.invalid) {
+          control.markAsDirty();
+          control.updateValueAndValidity({ onlySelf: true });
+        }
+      });
+    }
   }
 }

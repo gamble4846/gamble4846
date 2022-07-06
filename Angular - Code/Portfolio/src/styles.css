@@ -1,3 +1,7 @@
+@import "~ng-zorro-antd/ng-zorro-antd.min.css";
+@import "~ng-zorro-antd/style/index.min.css"; /* Import base styles */
+@import "~ng-zorro-antd/button/style/index.min.css";  /* Import one component's styles */
+
 :root {
   --main-navigation-container-height: 70px;
   --navigation-padding: 0px 20px;
@@ -40,6 +44,18 @@
 .main-body-container{
   height: calc(100vh - var(--main-navigation-container-height));
   display: flex;
+}
+
+.button-name{
+  color: white !important;
+}
+
+.form-item-label{
+  color: white !important;
+}
+
+.ant-form-horizontal .ant-form-item-label {
+  text-align: left !important;
 }
 
 .current-page-name{
@@ -115,6 +131,22 @@
   left: 120px;
   top: 150px;
   width: 40vw;
+}
+
+.top-0{
+  top: calc(var(--main-navigation-container-height) + 10px);
+}
+
+.ant-form-item{
+  margin-bottom: 0px !important;
+}
+
+.contact-me-header{
+  font-size: 30px;
+}
+
+.contact-me-hr{
+  margin: 10px 0px;
 }
 
 .page-data-container .subheading{
