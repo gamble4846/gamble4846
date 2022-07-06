@@ -36,11 +36,6 @@
   src: url(../src/assets/fonts/Rubik.ttf);
 }
 
-.app-menu-cmp{
-  z-index: 1;
-  position: relative;
-}
-
 .main-body-container{
   height: calc(100vh - var(--main-navigation-container-height));
   display: flex;
@@ -180,6 +175,8 @@
 .main-navigation-container{
   height: var(--main-navigation-container-height);
   background-color: black;
+  z-index: 1;
+  position: relative;
 }
 
 .inner-navigation-container{

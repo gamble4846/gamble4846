@@ -71,7 +71,6 @@ export class PageComponent implements OnInit {
   getPageData(){
     this.PageDataService.GetPageData().subscribe((response:any) => {
       if(response.status == "200"){
-        console.log(response);
         this.pageDatas = response.data;
         this.currentMainImage = this.pageDatas[0].ImageLink;
         this.currentPageName = this.pageDatas[0].PageName;
@@ -83,17 +82,14 @@ export class PageComponent implements OnInit {
       }
     },
     (error) => {
-      console.log(error);
       this.message.error("Error Occured");
     });
   }
 
   submitContactMeForm(){
     if (this.contactMeForm.valid) {
-      console.log('submit', this.contactMeForm.value);
       this.ContactMe.AddContactMe(this.contactMeForm.value.name,this.contactMeForm.value.email,this.contactMeForm.value.message).subscribe((response:any) => {
         if(response.status == "200"){
-          console.log(response);
           this.message.success("Message Sent");
           this.contactMeForm.reset();
         }
@@ -102,7 +98,6 @@ export class PageComponent implements OnInit {
         }
       },
       (error) => {
-        console.log(error);
         this.message.error("Error Occured");
       })
     } else {
@@ -112,6 +107,25 @@ export class PageComponent implements OnInit {
           control.updateValueAndValidity({ onlySelf: true });
         }
       });
+    }
+  }
+
+  navigationClicked(menuName:any){
+    switch(menuName){
+      case "Contact Me":
+        this.currentWheelPosition = ((this.totalPages + 1) * this.scrolPerPage) - 10;
+        this.updatePage();
+        break;
+      default:
+        let index = this.pageDatas.findIndex((x:any) => x.PageName == menuName);
+        if(index == -1){
+          this.message.error("Error Occured");
+        }
+        else{
+          this.currentWheelPosition = ((index + 1) * this.scrolPerPage) - 10;
+          this.updatePage();
+        }
+        break;
     }
   }
 }
