@@ -4,10 +4,9 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class PageDataServiceService {
+export class ContactMeService {
 
   apiLink:string = "https://script.google.com/macros/s/AKfycbwQcRg29pmqBDH4qUYh64DRmUg-KfcIDD3OByQTRB7OG5yfqlGT-9kKN5SJBPuf34gsdw/exec";
-
 
   constructor(private http: HttpClient) { }
 
@@ -18,10 +17,14 @@ export class PageDataServiceService {
     return options;
   }
 
-  GetPageData(){
+  AddContactMe(Name:any, Email:any, Message:any){
     var body ={
-      "method": "GETPAGEDATA"
-    };
+      "method": "ADDCONTACTMEDATA",
+      "DateTime": new Date(),
+      "Name": Name,
+      "Email": Email,
+      "Message": Message
+  };
     return this.http.post(this.apiLink, body, this.getOptions());
   }
 }

@@ -1,6 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { PageDataServiceService } from 'src/app/Services/PageDataService/page-data-service.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ContactMeService } from 'src/app/Services/ContactMeService/contact-me.service';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-page',
@@ -22,7 +24,7 @@ export class PageComponent implements OnInit {
   contactMeForm!:FormGroup;
 
 
-  constructor(public PageDataService:PageDataServiceService, private fb: FormBuilder) { }
+  constructor(private message: NzMessageService, public ContactMe:ContactMeService, public PageDataService:PageDataServiceService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.getPageData();
@@ -77,17 +79,32 @@ export class PageComponent implements OnInit {
         this.currentSelectedPageIndex = 0;
       }
       else{
-
+        this.message.error("Error Occured");
       }
     },
     (error) => {
       console.log(error);
+      this.message.error("Error Occured");
     });
   }
 
   submitContactMeForm(){
     if (this.contactMeForm.valid) {
       console.log('submit', this.contactMeForm.value);
+      this.ContactMe.AddContactMe(this.contactMeForm.value.name,this.contactMeForm.value.email,this.contactMeForm.value.message).subscribe((response:any) => {
+        if(response.status == "200"){
+          console.log(response);
+          this.message.success("Message Sent");
+          this.contactMeForm.reset();
+        }
+        else{
+          this.message.error("Error Occured");
+        }
+      },
+      (error) => {
+        console.log(error);
+        this.message.error("Error Occured");
+      })
     } else {
       Object.values(this.contactMeForm.controls).forEach(control => {
         if (control.invalid) {
