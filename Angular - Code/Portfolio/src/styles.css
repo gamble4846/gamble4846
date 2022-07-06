@@ -137,10 +137,6 @@
   top: calc(var(--main-navigation-container-height) + 10px);
 }
 
-.ant-form-item{
-  margin-bottom: 0px !important;
-}
-
 .contact-me-header{
   font-size: 30px;
 }
