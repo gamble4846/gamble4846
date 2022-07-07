@@ -19,6 +19,8 @@ export class PageComponent implements OnInit {
   totalPages:number = 0;
   currentSelectedPageIndex:number = 0;
   pageDatasTransform:any = "translateY(0vh)";
+  menuItems:any;
+  menuOpen:boolean = false;
 
   //Contect Me
   contactMeForm!:FormGroup;
@@ -68,6 +70,12 @@ export class PageComponent implements OnInit {
     }
   }
 
+  getMenusItems(){
+    this.menuItems = [...new Set(this.pageDatas.map((item:any) => item.PageName))];
+    this.menuItems.push("Experience");
+    this.menuItems.push("Contact Me");
+  }
+
   getPageData(){
     this.PageDataService.GetPageData().subscribe((response:any) => {
       if(response.status == "200"){
@@ -76,6 +84,7 @@ export class PageComponent implements OnInit {
         this.currentPageName = this.pageDatas[0].PageName;
         this.totalPages = this.pageDatas.length;
         this.currentSelectedPageIndex = 0;
+        this.getMenusItems();
       }
       else{
         this.message.error("Error Occured");
@@ -127,5 +136,9 @@ export class PageComponent implements OnInit {
         }
         break;
     }
+  }
+
+  toggleMenu(){
+    this.menuOpen = !this.menuOpen;
   }
 }

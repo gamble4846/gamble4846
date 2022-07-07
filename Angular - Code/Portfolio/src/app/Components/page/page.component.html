@@ -1,16 +1,20 @@
 <div class="main-navigation-container">
   <div class="inner-navigation-container">
-      <div class="initials-container">
-          RP
+    <div class="verticle-menu-container" [ngClass]="{'open': menuOpen}">
+      <div class="menu-items">
+        <div class="menu-item" (click)="navigationClicked(menuItem)" *ngFor="let menuItem of menuItems">{{menuItem}}</div>
       </div>
-      <div class="horizontal-menu-container">
-          <div class="menu-item" (click)="navigationClicked('Me')">Me</div>
-          <div class="menu-item" (click)="navigationClicked('My Projects')">My Projects</div>
-          <div class="menu-item" (click)="navigationClicked('Projects I\'ve Worked On')">Projects I've Worked On</div>
-          <div class="menu-item" (click)="navigationClicked('Experience')">Experience</div>
-          <div class="menu-item" (click)="navigationClicked('Blogs')">Blogs</div>
-          <div class="menu-item" (click)="navigationClicked('Contact Me')">Contact Me</div>
-      </div>
+    </div>
+    <div class="initials-container">
+      RP
+    </div>
+    <div class="horizontal-menu-container">
+      <div class="menu-item" (click)="navigationClicked(menuItem)" *ngFor="let menuItem of menuItems">{{menuItem}}</div>
+    </div>
+    <div class="toggle-button-container">
+      <i nz-icon nzType="menu-fold" nzTheme="outline" class="menu-toggle-icon" (click)="toggleMenu()" *ngIf="!menuOpen"></i>
+      <i nz-icon nzType="menu-unfold" nzTheme="outline" class="menu-toggle-icon" (click)="toggleMenu()" *ngIf="menuOpen"></i>
+    </div>
   </div>
 </div>
 
@@ -39,7 +43,7 @@
 
 <div class="page-datas" (wheel)="onMousewheel($event)" [style.transform]="pageDatasTransform">
   <div class="page-data" *ngFor="let page of pageDatas">
-    <div class="page-data-container" *ngIf="page.PageName == 'Me' || page.PageName == 'My Projects' ||  page.PageName == 'Projects I\'ve Worked On' ">
+    <div class="page-data-container" *ngIf="page.PageName == 'Me' || page.PageName == 'My Projects' ||  page.PageName == 'Projects I\'ve Worked On' || page.PageName == 'Blogs'">
       <div class="subheading">{{page.Subheading}}</div>
       <div class="heading">{{page.Heading}}</div>
       <div class="description">{{page.Description}}</div>

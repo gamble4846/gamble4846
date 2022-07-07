@@ -3,11 +3,16 @@
 @import "~ng-zorro-antd/button/style/index.min.css";  /* Import one component's styles */
 
 :root {
-  --main-navigation-container-height: 70px;
   --navigation-padding: 0px 20px;
-  --initials-menu-size: 40px;
   --navigation-font-color: white;
-  --menu-items-font-size: 13px;
+  --menu-items-font-size: 30px;
+  --verticle-menu-width: 300px;
+  --main-navigation-container-height: 200px;
+  --initials-menu-size: 80px;
+  --hover-line-distance: -80px;
+  --hover-line-height: 10px;
+  --horizontal-menu-width: 60%;
+  --menu-toggle-icon-size: 20px;
 }
 
 * {
@@ -150,12 +155,12 @@
 
 .page-data-container .description{
   padding-top: 30px;
-  font-size: 10px;
+  font-size: 15px;
 }
 
 .page-data-container .button-container{
   padding-top: 30px;
-  font-size: 10px;
+  font-size: 15px;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -191,36 +196,76 @@
 .initials-container{
   font-family: RampageMonoline;
   font-size: var(--initials-menu-size);
+  position: relative;
+  z-index: 4;
 }
 
 .horizontal-menu-container{
   display: flex;
   justify-content: space-between;
-  width: 60%;
+  width: var(--horizontal-menu-width);
   font-size: var(--menu-items-font-size);
 }
 
-.menu-item{
+.horizontal-menu-container .menu-item{
   cursor: pointer;
   position: relative;
 }
 
-.menu-item::after{
+.horizontal-menu-container .menu-item::after{
   content: "";
   position: absolute;
   width: 0%;
-  height: 3px;
+  height: var(--hover-line-height);
   background-color: white;
   left: 0;
   right: 0;
-  bottom: -25px;
+  bottom: var(--hover-line-distance);
   border-radius: 1px;
   transition: 0.3s ease-out;
   margin: auto;
 }
 
-.menu-item:hover::after{
+.horizontal-menu-container .menu-item:hover::after{
   width: 100%;
+}
+
+.verticle-menu-container{
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  transform: translateX(var(--verticle-menu-width));
+  transition: 0.3s ease-in-out;
+}
+
+.verticle-menu-container.open{
+  transform: translateX(0);
+}
+
+.verticle-menu-container .menu-items{
+  width: var(--verticle-menu-width);
+  max-width: 100vw;
+  background-color: black;
+  padding-top: var(--main-navigation-container-height);
+}
+
+.menu-toggle-icon{
+  color: white;
+  cursor: pointer;
+  font-size: var(--menu-toggle-icon-size);
+}
+
+.toggle-button-container{
+  position: relative;
+  z-index: 4;
+  display: none;
+}
+
+.verticle-menu-container .menu-items .menu-item{
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
 .right-arrow{
@@ -274,4 +319,48 @@
 
 .social-container .socials .social a img{
   height: 20px;
+}
+
+@media screen and (max-width: 1660px) {
+  :root {
+    --horizontal-menu-width: 80%
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  :root {
+    --main-navigation-container-height: 80px;
+    --initials-menu-size: 50px;
+    --hover-line-distance: -25px;
+    --hover-line-height: 6px;
+    --menu-items-font-size: 20px;
+    --horizontal-menu-width: 60%
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  :root {
+    --horizontal-menu-width: 80%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  :root {
+    --horizontal-menu-width: 90%
+  }
+}
+
+@media screen and (max-width: 850px) {
+  :root {
+    --main-navigation-container-height: 70px;
+    --initials-menu-size: 40px;
+  }
+
+  .horizontal-menu-container{
+    display: none;
+  }
+
+  .toggle-button-container{
+    display: block;
+  }
 }
