@@ -13,6 +13,10 @@
   --hover-line-height: 10px;
   --horizontal-menu-width: 60%;
   --menu-toggle-icon-size: 20px;
+
+  --main-page-start-top: 300px;
+  --main-page-start-left: 200px;
+  --subheading-font-size: 30px;
 }
 
 * {
@@ -150,10 +154,10 @@
 .page-data-container{
   color: white;
   position: absolute;
-  left: 120px;
-  top: 150px;
+  left: var(--main-page-start-left);
+  top: var(--main-page-start-top);
   width: 40vw;
-  height: calc(100vh - 150px);
+  height: calc(100vh - var(--main-page-start-top));
   overflow: auto;
 }
 
@@ -170,11 +174,11 @@
 }
 
 .page-data-container .subheading{
-  font-size: 18px;
+  font-size: var(--subheading-font-size);
 }
 
 .page-data-container .heading{
-  font-size: 40px;
+  font-size: var();
 }
 
 .page-data-container .description{
