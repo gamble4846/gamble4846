@@ -21,6 +21,9 @@ export class PageComponent implements OnInit {
   pageDatasTransform:any = "translateY(0vh)";
   menuItems:any;
   menuOpen:boolean = false;
+  pageOuterContainerTransform:any = "translateX(0vw)";
+  transitionDelayonMenuClick:any = "0.0s";
+  sideMenuOpened:boolean = false;
 
   //Contect Me
   contactMeForm!:FormGroup;
@@ -38,14 +41,16 @@ export class PageComponent implements OnInit {
   }
 
   @HostListener('mousewheel', ['$event']) onMousewheel(event:any) {
-    this.currentWheelPosition += event.deltaY;
-    if(this.currentWheelPosition < 0){
-      this.currentWheelPosition = 0;
+    if(!this.sideMenuOpened){
+      this.currentWheelPosition += event.deltaY;
+      if(this.currentWheelPosition < 0){
+        this.currentWheelPosition = 0;
+      }
+      if(this.currentWheelPosition > (this.totalPages + 1) * this.scrolPerPage){
+        this.currentWheelPosition = (this.totalPages + 1) * this.scrolPerPage;
+      }
+      this.updatePage();
     }
-    if(this.currentWheelPosition > (this.totalPages + 1) * this.scrolPerPage){
-      this.currentWheelPosition = (this.totalPages + 1) * this.scrolPerPage;
-    }
-    this.updatePage();
   }
 
   updatePage(){
@@ -120,6 +125,13 @@ export class PageComponent implements OnInit {
   }
 
   navigationClicked(menuName:any){
+    if(this.sideMenuOpened){
+      this.transitionDelayonMenuClick = "0.3s";
+    }
+
+    setTimeout(() =>{this.transitionDelayonMenuClick = "0.0s"},300);
+
+    this.backtoMainPage();
     switch(menuName){
       case "Contact Me":
         this.currentWheelPosition = ((this.totalPages + 1) * this.scrolPerPage) - 10;
@@ -140,5 +152,15 @@ export class PageComponent implements OnInit {
 
   toggleMenu(){
     this.menuOpen = !this.menuOpen;
+  }
+
+  mainPageButtonClicked(){
+    this.sideMenuOpened = true;
+    this.pageOuterContainerTransform = 'translateX(-100vw)';
+  }
+
+  backtoMainPage(){
+    this.sideMenuOpened = false;
+    this.pageOuterContainerTransform = 'translateX(0vw)';
   }
 }

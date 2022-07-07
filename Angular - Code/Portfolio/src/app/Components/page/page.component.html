@@ -2,7 +2,7 @@
   <div class="inner-navigation-container">
     <div class="verticle-menu-container" [ngClass]="{'open': menuOpen}">
       <div class="menu-items">
-        <div class="menu-item" (click)="navigationClicked(menuItem)" *ngFor="let menuItem of menuItems">{{menuItem}}</div>
+        <div class="menu-item" (click)="navigationClicked(menuItem); toggleMenu()" *ngFor="let menuItem of menuItems">{{menuItem}}</div>
       </div>
     </div>
     <div class="initials-container">
@@ -24,7 +24,7 @@
 
   </div>
   <div class="image-container-in-body">
-    <img src="{{page.ImageLink}}" class="image-in-body" *ngFor="let page of pageDatas; let i = index" [ngClass]="{'image-show': i == currentSelectedPageIndex}">
+    <img src="{{page.ImageLink}}" class="image-in-body" *ngFor="let page of pageDatas; let i = index" [ngClass]="{'image-show': i == currentSelectedPageIndex && !sideMenuOpened}">
   </div>
 </div>
 
@@ -41,57 +41,73 @@
     </div>
 </div>
 
-<div class="page-datas" (wheel)="onMousewheel($event)" [style.transform]="pageDatasTransform">
-  <div class="page-data" *ngFor="let page of pageDatas">
-    <div class="page-data-container" *ngIf="page.PageName == 'Me' || page.PageName == 'My Projects' ||  page.PageName == 'Projects I\'ve Worked On' || page.PageName == 'Blogs'">
-      <div class="subheading">{{page.Subheading}}</div>
-      <div class="heading">{{page.Heading}}</div>
-      <div class="description">{{page.Description}}</div>
-      <div class="button-container">
-        <div class="button-name">{{page.ButtonName}}</div>
-        <div class="right-arrow"></div>
+<div class="page-datas" (wheel)="onMousewheel($event)" [style.transform]="pageDatasTransform" [style.transition-delay]="transitionDelayonMenuClick">
+  <div class="page-data-outer-container" *ngFor="let page of pageDatas" [style.transform]="pageOuterContainerTransform">
+    <div class="page-data">
+      <div class="page-data-container" *ngIf="page.PageName == 'Me' || page.PageName == 'My Projects' ||  page.PageName == 'Projects I\'ve Worked On' || page.PageName == 'Blogs'">
+        <div class="subheading">{{page.Subheading}}</div>
+        <div class="heading">{{page.Heading}}</div>
+        <div class="description">{{page.Description}}</div>
+        <div class="button-container" (click)="mainPageButtonClicked()">
+          <div class="button-name">{{page.ButtonName}}</div>
+          <div class="right-arrow"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-inner-data">
+      <div class="page-inner-data-container">
+        <div class="button-container" (click)="backtoMainPage()">
+          <div class="right-arrow-container"><div class="right-arrow flip"></div></div>
+          <div class="button-name">Back</div>
+        </div>
+        <div class="inner-data-values">
+          LOL
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="page-data">
-    <div class="page-data-container top-0">
-      <div class="contact-me-header">Contact Me</div>
-      <hr class="contact-me-hr">
-      <form nz-form [formGroup]="contactMeForm" (ngSubmit)="submitContactMeForm()">
-        <nz-form-item>
-          <nz-form-label [nzSm]="24" [nzXs]="24" nzFor="name"><span class="form-item-label">Name</span></nz-form-label>
-          <nz-form-control [nzSm]="24" [nzXs]="24" [nzErrorTip]="nameError">
-            <input nz-input type="text" formControlName="name" id="name" placeholder="Enter Name"/>
-            <ng-template #nameError let-control>
-              <ng-container *ngIf="control.hasError('required')">Please Enter Your Name</ng-container>
-            </ng-template>
-          </nz-form-control>
-        </nz-form-item>
-        <nz-form-item>
-          <nz-form-label [nzSm]="24" [nzXs]="24" nzFor="email"><span class="form-item-label">Email</span></nz-form-label>
-          <nz-form-control [nzSm]="24" [nzXs]="24" [nzErrorTip]="emailError">
-            <input nz-input type="text" formControlName="email" id="email" placeholder="Enter Email"/>
-            <ng-template #emailError let-control>
-              <ng-container *ngIf="control.hasError('required')">Please Enter Your Email</ng-container>
-              <ng-container *ngIf="control.hasError('email')">Invalid Email</ng-container>
-            </ng-template>
-          </nz-form-control>
-        </nz-form-item>
-        <nz-form-item>
-          <nz-form-label [nzSm]="24" [nzXs]="24" nzFor="message"><span class="form-item-label">Message</span></nz-form-label>
-          <nz-form-control [nzSm]="24" [nzXs]="24" [nzErrorTip]="messageError">
-            <textarea rows="4" nz-input type="text" formControlName="message" id="message" placeholder="Enter Message"></textarea>
-            <ng-template #messageError let-control>
-              <ng-container *ngIf="control.hasError('required')">Please Enter Your Message</ng-container>
-            </ng-template>
-          </nz-form-control>
-        </nz-form-item>
-        <div class="button-container" (click)="submitContactMeForm()">
-          <div class="button-name">Submit</div>
-          <div class="right-arrow"></div>
-        </div>
-      </form>
+  <div class="page-data-outer-container">
+    <div class="page-data">
+      <div class="page-data-container top-0">
+        <div class="contact-me-header">Contact Me</div>
+        <hr class="contact-me-hr">
+        <form nz-form [formGroup]="contactMeForm" (ngSubmit)="submitContactMeForm()">
+          <nz-form-item>
+            <nz-form-label [nzSm]="24" [nzXs]="24" nzFor="name"><span class="form-item-label">Name</span></nz-form-label>
+            <nz-form-control [nzSm]="24" [nzXs]="24" [nzErrorTip]="nameError">
+              <input nz-input type="text" formControlName="name" id="name" placeholder="Enter Name"/>
+              <ng-template #nameError let-control>
+                <ng-container *ngIf="control.hasError('required')">Please Enter Your Name</ng-container>
+              </ng-template>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-label [nzSm]="24" [nzXs]="24" nzFor="email"><span class="form-item-label">Email</span></nz-form-label>
+            <nz-form-control [nzSm]="24" [nzXs]="24" [nzErrorTip]="emailError">
+              <input nz-input type="text" formControlName="email" id="email" placeholder="Enter Email"/>
+              <ng-template #emailError let-control>
+                <ng-container *ngIf="control.hasError('required')">Please Enter Your Email</ng-container>
+                <ng-container *ngIf="control.hasError('email')">Invalid Email</ng-container>
+              </ng-template>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-label [nzSm]="24" [nzXs]="24" nzFor="message"><span class="form-item-label">Message</span></nz-form-label>
+            <nz-form-control [nzSm]="24" [nzXs]="24" [nzErrorTip]="messageError">
+              <textarea rows="4" nz-input type="text" formControlName="message" id="message" placeholder="Enter Message"></textarea>
+              <ng-template #messageError let-control>
+                <ng-container *ngIf="control.hasError('required')">Please Enter Your Message</ng-container>
+              </ng-template>
+            </nz-form-control>
+          </nz-form-item>
+          <div class="button-container" (click)="submitContactMeForm()">
+            <div class="button-name">Submit</div>
+            <div class="right-arrow"></div>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>
