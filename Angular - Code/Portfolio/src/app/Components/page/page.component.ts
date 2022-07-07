@@ -24,6 +24,8 @@ export class PageComponent implements OnInit {
   pageOuterContainerTransform:any = "translateX(0vw)";
   transitionDelayonMenuClick:any = "0.0s";
   sideMenuOpened:boolean = false;
+  showFullPageLoader:boolean = false;
+  loaderTransparent:boolean = false;
 
   //Contect Me
   contactMeForm!:FormGroup;
@@ -82,6 +84,7 @@ export class PageComponent implements OnInit {
   }
 
   getPageData(){
+    this.showFullPageLoader = true;
     this.PageDataService.GetPageData().subscribe((response:any) => {
       if(response.status == "200"){
         this.pageDatas = response.data;
@@ -90,6 +93,7 @@ export class PageComponent implements OnInit {
         this.totalPages = this.pageDatas.length;
         this.currentSelectedPageIndex = 0;
         this.getMenusItems();
+        this.showFullPageLoader = false;
       }
       else{
         this.message.error("Error Occured");
@@ -102,17 +106,23 @@ export class PageComponent implements OnInit {
 
   submitContactMeForm(){
     if (this.contactMeForm.valid) {
+      this.loaderTransparent = true;
+      this.showFullPageLoader = true;
       this.ContactMe.AddContactMe(this.contactMeForm.value.name,this.contactMeForm.value.email,this.contactMeForm.value.message).subscribe((response:any) => {
         if(response.status == "200"){
-          this.message.success("Message Sent");
+          this.message.success("Message Sent",{nzDuration: 3000});
           this.contactMeForm.reset();
         }
         else{
-          this.message.error("Error Occured");
+          this.message.error("Error Occured",{nzDuration: 3000});
         }
+        this.loaderTransparent = false;
+        this.showFullPageLoader = false;
       },
       (error) => {
-        this.message.error("Error Occured");
+        this.message.error("Error Occured",{nzDuration: 3000});
+        this.loaderTransparent = false;
+        this.showFullPageLoader = false;
       })
     } else {
       Object.values(this.contactMeForm.controls).forEach(control => {
@@ -140,7 +150,7 @@ export class PageComponent implements OnInit {
       default:
         let index = this.pageDatas.findIndex((x:any) => x.PageName == menuName);
         if(index == -1){
-          this.message.error("Error Occured");
+          this.message.error("Error Occured",{nzDuration: 3000});
         }
         else{
           this.currentWheelPosition = ((index + 1) * this.scrolPerPage) - 10;

@@ -153,6 +153,8 @@
   left: 120px;
   top: 150px;
   width: 40vw;
+  height: calc(100vh - 150px);
+  overflow: auto;
 }
 
 .top-0{
@@ -369,6 +371,68 @@
 
 .social-container .socials .social a img{
   height: 20px;
+}
+
+.loader-container{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transparent-background{
+  background-color: #00000085;
+}
+
+.loader-inner-container {
+  display: flex;
+  margin: auto;
+  text-decoration: none;
+  outline: none;
+  font-size: 40px;
+  cursor: pointer;
+  position: relative;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  animation: pulse 2s ease-out infinite;
+}
+
+span {
+  margin: auto;
+  color: transparent;
+  text-shadow: 0 0 0 white;
+}
+
+.loader-inner-container::after {
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  border-radius: 50%;
+  position: absolute;
+}
+
+span.ng-tns-c64-3{
+  color: black !important;
+}
+
+span.ng-tns-c64-4{
+  color: black !important;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0px rgba(255,255,255),0 0 0 0px rgba(255,255,255);  }
+  50% { transform: scale(0.95); }
+  100% { box-shadow: 0 0 0 15px rgba(0,210,255,0),0 0 0 30px rgba(0,210,255,0); }
 }
 
 @media screen and (max-width: 1660px) {

@@ -111,3 +111,9 @@
     </div>
   </div>
 </div>
+
+<div class="loader-container" *ngIf="showFullPageLoader" [ngClass]="{'transparent-background': loaderTransparent}">
+  <div class="loader-inner-container" href="#">
+    <img src="../../../favicon.ico">
+  </div>
+</div>
