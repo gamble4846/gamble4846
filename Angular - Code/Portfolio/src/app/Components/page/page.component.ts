@@ -26,6 +26,8 @@ export class PageComponent implements OnInit {
   sideMenuOpened:boolean = false;
   showFullPageLoader:boolean = false;
   loaderTransparent:boolean = false;
+  swipeCoord?:any;
+  swipeTime?:any;
 
   //Contect Me
   contactMeForm!:FormGroup;
@@ -60,7 +62,7 @@ export class PageComponent implements OnInit {
       const pageData = this.pageDatas[index];
       let maxScroll = (index + 1) * this.scrolPerPage;
       let minScroll = ((index + 1) * this.scrolPerPage) - this.scrolPerPage;
-      if(this.currentWheelPosition < maxScroll && this.currentWheelPosition > minScroll){
+      if(this.currentWheelPosition <= maxScroll && this.currentWheelPosition >= minScroll){
         this.currentMainImage = this.pageDatas[index].ImageLink;
         this.currentPageName = this.pageDatas[index].PageName;
         this.totalPages = this.pageDatas.length;
@@ -172,5 +174,85 @@ export class PageComponent implements OnInit {
   backtoMainPage(){
     this.sideMenuOpened = false;
     this.pageOuterContainerTransform = 'translateX(0vw)';
+  }
+
+  swipe(e: TouchEvent, when: string): void {
+    const coord: [number, number] = [e.changedTouches[0].clientX, e.changedTouches[0].clientY];
+    const time = new Date().getTime();
+
+    if (when === 'start') {
+      this.swipeCoord = coord;
+      this.swipeTime = time;
+
+    } else if (when === 'end') {
+      const direction = [coord[0] - this.swipeCoord[0], coord[1] - this.swipeCoord[1]];
+      const duration = time - this.swipeTime;
+
+      if (duration < 1000
+        && Math.abs(direction[0]) > 30
+        && Math.abs(direction[0]) > Math.abs(direction[1] * 3)) {
+          const swipe = direction[0] < 0 ? 'next' : 'previous';
+          if(swipe == "next"){
+            this.HorizontalNextSwipe();
+          }
+
+          if(swipe == "previous"){
+            this.HorizontalPreviousSwipe();
+          }
+      }
+
+      if (duration < 1000
+        && Math.abs(direction[1]) > 30
+        && Math.abs(direction[1]) > Math.abs(direction[0] * 3)) {
+          const swipe = direction[1] < 0 ? 'next' : 'previous';
+          if(swipe == "next"){
+            this.VerticleNextSwipe();
+          }
+
+          if(swipe == "previous"){
+            this.VerticlePreviousSwipe();
+          }
+      }
+    }
+  }
+
+  VerticleNextSwipe(){
+    if(!this.sideMenuOpened){
+      this.currentWheelPosition += this.scrolPerPage;
+      if(this.currentWheelPosition < 0){
+        this.currentWheelPosition = 0;
+      }
+      if(this.currentWheelPosition > (this.totalPages + 1) * this.scrolPerPage){
+        this.currentWheelPosition = (this.totalPages + 1) * this.scrolPerPage;
+      }
+      console.log(this.currentWheelPosition);
+      this.updatePage();
+    }
+  }
+
+  VerticlePreviousSwipe(){
+    if(!this.sideMenuOpened){
+      this.currentWheelPosition -= this.scrolPerPage;
+      if(this.currentWheelPosition < 0){
+        this.currentWheelPosition = 0;
+      }
+      if(this.currentWheelPosition > (this.totalPages + 1) * this.scrolPerPage){
+        this.currentWheelPosition = (this.totalPages + 1) * this.scrolPerPage;
+      }
+      console.log(this.currentWheelPosition);
+      this.updatePage();
+    }
+  }
+
+  HorizontalNextSwipe(){
+    if(!this.sideMenuOpened){
+      this.mainPageButtonClicked();
+    }
+  }
+
+  HorizontalPreviousSwipe(){
+    if(this.sideMenuOpened){
+      this.backtoMainPage();
+    }
   }
 }

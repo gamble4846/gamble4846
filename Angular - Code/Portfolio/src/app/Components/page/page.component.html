@@ -41,7 +41,7 @@
     </div>
 </div>
 
-<div class="page-datas" (wheel)="onMousewheel($event)" [style.transform]="pageDatasTransform" [style.transition-delay]="transitionDelayonMenuClick">
+<div class="page-datas" (touchstart)="swipe($event, 'start')" (touchend)="swipe($event, 'end')" (wheel)="onMousewheel($event)" [style.transform]="pageDatasTransform" [style.transition-delay]="transitionDelayonMenuClick">
   <div class="page-data-outer-container" *ngFor="let page of pageDatas" [style.transform]="pageOuterContainerTransform">
     <div class="page-data">
       <div class="page-data-container" *ngIf="page.PageName == 'Me' || page.PageName == 'My Projects' ||  page.PageName == 'Projects I\'ve Worked On' || page.PageName == 'Blogs'">
